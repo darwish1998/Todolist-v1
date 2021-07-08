@@ -1,8 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 
-const app = express()
-app.set('view engine', 'ejs');
+const app = express();
+
+app.set("view engine", "ejs");
 
 
 
@@ -11,7 +12,7 @@ app.get("/", function(req, res) {
   var today = new Date();
   var currentDay = today.getDate();
   var day = "";
-  //
+
   // if (currentDay === 6 || currentDay === 0 ) {
   //   day = "Weekend";
   //
@@ -21,36 +22,36 @@ app.get("/", function(req, res) {
   // }
   switch (currentDay) {
 
+    case 0:
+      day = "Sunday";
+      break;
+
     case 1:
-      day = "Sato";
+      day = "Mondat";
       break;
 
     case 2:
-      day = "Sun";
+      day = "Tuesday";
       break;
 
     case 3:
-      day = "Mon";
+      day = "Wednessday";
       break;
 
     case 4:
-      day = "Tue";
+      day = "Thursday";
       break;
 
     case 5:
-      day = "Wed";
+      day = "Friday";
       break;
 
     case 6:
-      day = "Thus";
-      break;
-
-    case 7:
-      day = "Fri";
+      day = "Saturday";
       break;
 
     default:
-    console.log("Something is Wrong: current day is" + currentDay );
+    console.log("Something is Wrong: current day is " + currentDay);
 
   }
 
